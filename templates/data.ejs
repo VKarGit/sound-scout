@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+    
+        <style>
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background-color: #eaeaea;
+                margin: 0;
+                padding: 20px;
+                color: #444;
+            }
+            h1 {
+                color: #333;
+            }
+            .form {
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+                margin-top: 20px;
+            }
+            input[type="number"], button {
+                padding: 10px;
+                margin: 10px 0;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+            button {
+                background-color: #5cb85c;
+                color: white;
+                border: none;
+                cursor: pointer;
+            }
+            button:hover {
+                background-color: #4cae4c;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 20px;
+            }
+            table, th, td {
+                border: 1px solid #ddd;
+            }
+            th, td {
+                padding: 10px;
+                text-align: left;
+            }
+            tr {
+                background-color: #f2f2f2;
+            }
+            tr {
+                background-color: #f9f9f9;
+            }
+            tr:hover {
+                background-color: #f1f1f1;
+            }
+        </style>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/style.css">
+        <title>Result</title>
+    </head>
+
+    <body>
+        
+        <h1>Display Songs Rating Greater than or Equal to</h1>
+
+        <div class = "form">
+            <form action="/data" method="post">
+                <input type="number" name="thresholdRating" id="thresholdRatingInput"
+                min="1" max="5" step="0.5">
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <br>
+        <table border="1">
+            <thead>
+                <td>Title</td>
+                <td>Rating</td>
+            </thead>
+            <%- tableContents %>
+        </table>
+
+        <br>
+        <form action="/data" method="post">
+            <button type="submit">Clear All Ratings</button>
+            <a href="/"><button>Rate Some More Songs!</button></a>
+        </form>        
+    </body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+            
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+                margin: 0;
+                padding: 20px;
+                color: #333;
+            }
+            #track {
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+            form {
+                margin-top: 20px;
+            }
+            input[type="text"], button {
+                padding: 10px;
+                margin: 5px 0;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+            }
+            button {
+                background-color: #5cb85c;
+                color: white;
+                border: none;
+                cursor: pointer;
+            }
+            button:hover {
+                background-color: #4cae4c;
+            }
+        </style>
+
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link rel="stylesheet" href="/css/style.css">
+                <title>Document</title>
+    </head>
+
+    <body>
+        <div id="track">
+            <%- trackFrame %>
+        </div>
+        <br><br>
+        <form action="/" method="post">
+            artist name: 
+            <input type="text" name="artistName">
+            <button type="submit" id="artistBtn">go!</button><br>            
+        </form>
+        <form action="/rate" method="post">
+            rating: 
+            <input type="number" name="rating" id="trackRating" min="1" max="5" step="0.5">
+            <input type="hidden" name="title" value="<%- title %>">
+            <button type="submit" id="rateButton">rate it!</button><br>          
+        </form>
+
+        <br>
+            <a href="/data"><button>Check out Your Past Ratings!</button></a>
+        <br>
+    </body>
+
+</html>
