@@ -7,7 +7,7 @@ const { searchArtist, getArtistAlbums, getAlbumTracks } = require('./spotifyApiU
 require("dotenv").config({ path: path.resolve(__dirname, 'secrets/.env') });
 
 const app = express();
-const port = 80;
+const port = 443;
 app.set("view engine", "ejs");
 app.set("views", path.resolve(__dirname, "templates"));
 app.use(bodyParser.urlencoded({extended:false}));
