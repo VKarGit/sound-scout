@@ -143,8 +143,6 @@ app.post('/clearData', async (req, res) => {
     } catch (err) {
         console.error(err);
         res.status(500).send('Error clearing data.');
-    } finally {
-        await client.close();
     }
 });
 
