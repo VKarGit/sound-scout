@@ -139,8 +139,7 @@ app.post('/clearData', async (req, res) => {
         const collection = db.collection(collectionName);
 
         await collection.deleteMany({});
-
-        res.send('All data cleared successfully.');
+        res.redirect("/");
     } catch (err) {
         console.error(err);
         res.status(500).send('Error clearing data.');
